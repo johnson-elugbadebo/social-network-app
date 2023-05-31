@@ -1,7 +1,7 @@
 {
-	"name": "client",
+	"name": "Johnson's Social Network Application",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Full stack social network application allowing users to post messages, log likes and comments on those posts, and follow and unfollow the posts of other users.",
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
@@ -12,8 +12,13 @@
 		"lint": "next lint"
 	},
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Johnson Elugbadebo",
+	"license": "UNLICENSED",
+	"private": "true",
+	"engines": {
+		"node": "18.16.0",
+		"npm": "9.6.6"
+	},
 	"dependencies": {
 		"@ant-design/icons": "^5.0.1",
 		"antd": "^5.3.1",
