@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../context/index.js';
 import Background from '../components/Background.js';
 import axios from 'axios';
@@ -7,13 +7,13 @@ import Head from 'next/head';
 // import Link from 'next/link';
 import { io } from 'socket.io-client';
 
-const socket = io(
-	process.env.NEXT_PUBLIC_SOCKETIO,
-	{ path: '/socket.io' },
-	{
-		reconnection: true,
-	}
-);
+// const socket = io(
+// 	process.env.NEXT_PUBLIC_SOCKETIO,
+// 	{ path: '/socket.io' },
+// 	{
+// 		reconnection: true,
+// 	}
+// );
 
 function Home(props) {
 	const [state, setState] = useContext(UserContext);
@@ -33,7 +33,7 @@ function Home(props) {
 	// 	});
 	// }, []);
 
-	const collection = newsFeed.length > 0 ? newsFeed : props.posts;
+	// const collection = newsFeed.length > 0 ? newsFeed : props.posts;
 
 	return (
 		<>
