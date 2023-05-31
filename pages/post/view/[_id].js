@@ -47,7 +47,7 @@ export async function getServerSideProps(context) {
 		`http://127.0.0.1:10000/api/v1/post/render/post/${context.params._id}`
 	);
 	const data = await response.json();
-	console.log(data);
+	// console.log(data);
 
 	// const SystemAxios = axios.create({
 	// 	baseURL: 'http://127.0.0.1:8080/api/v1',
