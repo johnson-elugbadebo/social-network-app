@@ -119,10 +119,7 @@ function Home(props) {
 }
 
 export async function getServerSideProps() {
-	const SystemAxios = axios.create({
-		baseURL: 'http://127.0.0.1:8080/api/v1',
-	});
-	const response = await SystemAxios.get('/post/render/posts');
+	const response = await axios.get('/post/render/posts');
 	// console.log(response.data.posts);
 	return {
 		props: { posts: response.data.posts },
