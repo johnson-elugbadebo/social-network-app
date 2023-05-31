@@ -43,13 +43,19 @@ function SinglePost(props) {
 }
 
 export async function getServerSideProps(context) {
-	const SystemAxios = axios.create({
-		baseURL: 'http://127.0.0.1:8080/api/v1',
-	});
-	const response = await SystemAxios.get(`/post/render/post/${context.params._id}`);
+	const response = await fetch(
+		`http://127.0.0.1:8080/api/v1/post/render/post/${context.params._id}`
+	);
+	const data = await response.json();
+	console.log(data);
+
+	// const SystemAxios = axios.create({
+	// 	baseURL: 'http://127.0.0.1:8080/api/v1',
+	// });
+	// const response = await SystemAxios.get(`/post/render/post/${context.params._id}`);
 
 	return {
-		props: { post: response.data.post },
+		props: { post: data },
 	};
 }
 

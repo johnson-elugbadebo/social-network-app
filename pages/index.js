@@ -1,7 +1,7 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { UserContext } from '../context/index.js';
 import Background from '../components/Background.js';
-import axios from 'axios';
+// import axios from 'axios';
 // import PostPublic from '../components/PostPublic.js';
 import Head from 'next/head';
 // import Link from 'next/link';
@@ -15,10 +15,10 @@ import Head from 'next/head';
 // 	}
 // );
 
-function Home(props) {
-	const [state, setState] = useContext(UserContext);
+function Home() {
+	// const [state, setState] = useContext(UserContext);
 
-	const [newsFeed, setNewsFeed] = useState([]);
+	// const [newsFeed, setNewsFeed] = useState([]);
 
 	// useEffect(() => {
 	// 	// console.log('SOCKET IO ON JOIN', socket);
@@ -119,16 +119,11 @@ function Home(props) {
 }
 
 export async function getServerSideProps() {
-	const SystemAxios = axios.create({
-		baseURL: 'http://127.0.0.1:8080/api/v1',
-	});
-	const response = await SystemAxios.get('/post/render/posts');
-
-	// const response = await fetch('http://127.0.0.1:8080/api/v1/post/render/posts');
-	// const responseJson = await response.json();
-	// console.log(responseJson);
+	const response = await fetch('http://127.0.0.1:8080/api/v1/post/render/posts');
+	const data = await response.json();
+	console.log(data);
 	return {
-		props: { posts: response.data.posts },
+		props: { posts: data },
 	};
 }
 
