@@ -10,7 +10,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 
 // Configure Next App
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 10000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev: dev });
 const handle = app.getRequestHandler();

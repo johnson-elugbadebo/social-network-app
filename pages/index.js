@@ -119,7 +119,7 @@ function Home() {
 }
 
 export async function getServerSideProps() {
-	const response = await fetch('http://127.0.0.1:8080/api/v1/post/render/posts');
+	const response = await fetch('http://127.0.0.1:10000/api/v1/post/render/posts');
 	const data = await response.json();
 	console.log(data);
 	return {

@@ -44,7 +44,7 @@ function SinglePost(props) {
 
 export async function getServerSideProps(context) {
 	const response = await fetch(
-		`http://127.0.0.1:8080/api/v1/post/render/post/${context.params._id}`
+		`http://127.0.0.1:10000/api/v1/post/render/post/${context.params._id}`
 	);
 	const data = await response.json();
 	console.log(data);
