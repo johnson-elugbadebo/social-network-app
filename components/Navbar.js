@@ -26,7 +26,7 @@ function Navbar() {
 		<nav className='nav d-flex justify-content-between' style={{ backgroundColor: 'blue' }}>
 			<Link href='/' legacyBehavior>
 				<a className={`nav-link text-light ${current === '/' && 'active'}`}>
-					<Avatar src='/images/logo.png' /> MERNSTACK APP
+					<Avatar src='/images/logo.png' /> SOCIAL NETWORK APP
 				</a>
 			</Link>
 
