@@ -5,7 +5,7 @@ import axios from 'axios';
 // import PostPublic from '../components/PostPublic.js';
 import Head from 'next/head';
 // import Link from 'next/link';
-import { io } from 'socket.io-client';
+// import { io } from 'socket.io-client';
 
 // const socket = io(
 // 	process.env.NEXT_PUBLIC_SOCKETIO,
@@ -119,8 +119,14 @@ function Home(props) {
 }
 
 export async function getServerSideProps() {
-	const response = await axios.get('/post/render/posts');
-	// console.log(response.data.posts);
+	const SystemAxios = axios.create({
+		baseURL: 'http://127.0.0.1:8080/api/v1',
+	});
+	const response = await SystemAxios.get('/post/render/posts');
+
+	// const response = await fetch('http://127.0.0.1:8080/api/v1/post/render/posts');
+	// const responseJson = await response.json();
+	// console.log(responseJson);
 	return {
 		props: { posts: response.data.posts },
 	};

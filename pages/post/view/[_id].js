@@ -44,7 +44,7 @@ function SinglePost(props) {
 
 export async function getServerSideProps(context) {
 	const SystemAxios = axios.create({
-		baseURL: 'http://localhost:5000/api/v1',
+		baseURL: 'http://127.0.0.1:8080/api/v1',
 	});
 	const response = await SystemAxios.get(`/post/render/post/${context.params._id}`);
 

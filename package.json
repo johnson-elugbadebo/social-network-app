@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "node server/server.js",
+		"dev": "next dev",
 		"build": "next build",
 		"start": "node server/server.js",
 		"setup-production": "npm install && npm run build",
